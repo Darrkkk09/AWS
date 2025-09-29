@@ -1,0 +1,29 @@
+service: Learning
+frameworkVersion: ">=3.40.0 <4"
+
+provider:
+  name: aws
+  runtime: nodejs20.x
+  region: ap-south-1
+
+functions:
+  Learningfn1:
+    handler: Check.handler
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+  Learningfn2:
+    handler: Check.handler1
+    events:
+      - httpApi:
+          path: /hi
+          method: get
+
+  Learningfn3:
+    handler: Check.handler2
+    events:
+      - httpApi:
+          path: /bye
+          method: get
